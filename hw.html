@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+ <head>
+  <meta charset="utf-8">      
+    </head>
+
+<body>
+	 
+<script>
+
+class Pet {
+  constructor(name, type, animalClass,id_animal) {
+    this.name = name;
+    this.type = type;
+    this.commands = [];
+	this.animalClass= animalClass;
+	this.id_animal= id_animal;
+  }
+	 
+};
+   
+  class PackAnimal {
+    constructor(name, type, animalClass, id_animal) {
+      this.name = name;
+      this.type = type;
+      this.commands = [];
+    this.animalClass= animalClass;
+    this.id_animal= id_animal;
+    }
+  };
+ 
+class Count {
+  constructor(count) {
+  this.count = 0;
+  }
+
+  add() {
+  this.count++;
+  console.log('counter increased by 1');
+  }
+};
+const counter = new Count();
+
+
+const petsRegistry = [];
+const packsRegistry = [];
+const all_id= [];
+const all_animal =[];
+const all_command =['make a sound','seat down','lay down'];
+
+
+function addNewPet() {
+  const name = prompt('Enter pet name: ');
+  const type = prompt('Enter pet type: ');
+  const id_animal= Math.floor(Math.random() * 100);
+  const animalClass = +prompt('Enter 1 if it is a pet animal, 2 if it is a pack animal: ');
+	if (animalClass == 1) {
+	const newPet = new Pet(name, type,animalClass, id_animal);
+	 petsRegistry.push(newPet);
+	 all_id.push(id_animal);
+	 all_animal.push(newPet);
+   (counter.add());
+	 
+	} else if (animalClass == 2) {
+	const newPackAnimals = new PackAnimal(name, type,animalClass, id_animal);
+	packsRegistry.push(newPackAnimals);
+	all_id.push(id_animal);
+	all_animal.push(newPackAnimals);
+  counter.add();
+	} else {
+    console.log("You entered an incorrect number");
+    addNewPet()
+  }
+  
+  console.log('New pet added to registry!');  
+}
+
+function printAllAnimals () {
+  console.log("List of all animals: ");
+  if (all_animal.length ===0) {
+    console.log("You haven't registered any animals")
+  } else {
+    all_animal.forEach(obj => {
+  console.log("Name:", obj.name, "Type:", obj.type);
+    });
+  }
+  
+}
+
+function showPetCommands() {
+  
+  if (all_animal.length ===0) {
+    console.log("You haven't registered any animals")
+  } else {
+  all_command.forEach(command => {
+    console.log("Animal can " + command + ", ");
+  });
+
+  }
+}
+
+
+
+ 
+
+function teachPetCommand() {
+  
+  if (all_animal.length !==0) {
+    const new_command = prompt('Enter new command to teach: ');
+    all_command.push(new_command);
+    console.log("Animal learned a new command");
+  } else {
+    console.log("You haven't registered any animals");
+  }
+}
+
+function showMenu() {
+  confirm(`What you want to do?
+  1. Add new pet
+  2. List of animals
+  3. Show pet commands
+  4. Teach pet new command
+  5. Exit`);
+  }
+  
+
+function main() {
+  let choice = 0;
+  while (choice !== 5) {
+    //showMenu();
+    choice = parseInt(prompt('Enter your choice: '));
+    switch (choice) {
+      case 1:
+        addNewPet();
+        break;
+      case 2:
+      printAllAnimals();
+        break;
+      case 3:
+        showPetCommands();
+        break;
+      case 4:
+        teachPetCommand();
+        break;
+      case 5:
+        console.log('Exit');
+        break;
+      default:
+        console.log('Invalid choice');
+        break;
+    }
+  }
+}
+showMenu();
+main();
+
+
+
+</script>
