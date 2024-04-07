@@ -198,4 +198,7 @@ FROM animals WHERE Birthday BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADD
  
 SELECT * FROM young_animal;
 
- 
+
+ 14. Написать программу, имитирующую работу реестра домашних животных
+
+Программа представлена в файле hw.html
