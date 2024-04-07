@@ -22,4 +22,5 @@
 животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные
 войдут: Лошади, верблюды и ослы).
 
-![Screenshot from 2024-04-07 14-38-27](https://github.com/kmss13/HomeWorkFinal/assets/94681910/7a62e89d-f9cd-4ae3-8154-75762c44d3f1)
+
+![Screenshot from 2024-04-07 14-38-27](https://github.com/kmss13/HomeWorkFinal/assets/94681910/f5cc744d-a181-4ce2-b6de-9cf94f68bb53)
